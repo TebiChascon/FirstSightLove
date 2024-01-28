@@ -11,6 +11,7 @@ tag:
 <<PlayMusic Sound track01>>
 <<FadeInMusic Sound 3>>
 <<FadeOut Fade 3>>
+<<wait 3>>
 
 ???: Hola??
 ???: Soy Angelette,
@@ -18,7 +19,6 @@ tag:
 <<SetNeutralAnimation AngelicAnimations>>
 Angelette: De tinder!
 Su belleza es literalmente cegadora.
-<<Shake ShakeEffect>>
 Angelette: Me estas esperando a mi, o no?
 
 -> Sí! // [5]
@@ -28,179 +28,212 @@ Angelette: Me estas esperando a mi, o no?
     Angelette: Me puse un poquito nerviosa, jijiji.
 -> Sí? // [2]
     <<set $score = $score + 2>>
-    Angelette: oh… yo… em….
-    Angelette: Supongo que me veo un poquito distinta en persona…
+    Angelette: oh... yo... em....
+    Angelette: Supongo que me veo un poquito distinta en persona...
 
 Angelette: Disculpa por llegar tarde!
 Angelette: Ai odio esto es que mi jefe es pésimo y siempre estoy haciendo horas extra!
-Angelette: Igual me quería arreglar antes de venir…
-Angelette: Quizás el delineado fue mucho o no…
+Angelette: Igual me quería arreglar antes de venir...
+Angelette: Quizás el delineado fue mucho o no...
 Angelette: Te gusta mi delineado??
 
--> sí… // [0]
+-> sí... // [0]
     <<set $score = $score + 0>>
-    // [Screen_Shake][Music_Stops][Play_record-scratch-sound2.wav]
+    <<PauseMusic Sound>>
+    <<Shake ShakeEffect>>
+    <<PlaySFX Sound record-scratch-sound2>>
     <<SetShockAnimation AngelicAnimations>>
-    Angelette: …
-    Angelette: …
-    // [Music_Plays]
+    Angelette: ...
+    Angelette: ...
+    <<ResumeMusic Sound>>
     Angelette: Bueno.
 -> Sí! // [3]
     <<set $score = $score + 3>>
     <<SetBlushOn AngelicAnimations true>>
     Angelette: Ai, para!
-    Angelette: Jijiiji, Que como que me da vergüenza…
+    Angelette: Jijiiji, Que como que me da vergüenza...
     <<SetBlushOn AngelicAnimations false>>
 -> Sí. // [5]
     <<set $score = $score + 5>>
     <<SetBlushOn AngelicAnimations true>>
-    Angelette: Oooh…
+    Angelette: Oooh...
     Angelette: Eres de perso seria y decidida, o no?
     Angelette: Me gusta, jiji.
     <<SetBlushOn AngelicAnimations false>>
 
 <<SetNeutralAnimation AngelicAnimations>>
-Angelette: No tenia mucho tiempo en verdad…
-Angelette: Nose si te ha tocado trabajar con la familia.
+Angelette: No tenía mucho tiempo en verdad...
+Angelette: No se si te ha tocado trabajar con la familia.
 Angelette: Son todos unos metiches que andan sapeando todo el rato!
-Angelette: Imagínate mi jefe es mi papa, terrible…
+Angelette: Imagínate mi jefe es mi papá, terrible...
 Angelette: Deberíamos pedir algo o no?
-Angelette: …
+Angelette: ...
 
-// [Fade_IN]
-// Cambio de fondo de “Cafecito1_bg.png” a “Cafecito2_bg.png”
-// [Fade_OUT]**
+<<FadeIn Fade 2>>
+<<wait 2>>
+<<Set GameBackground Cafecito2_bg>>
+<<FadeOut Fade 2>>
+<<wait 2>>
 
 // ### El cafe, mesa post-comida.
 
-Angelette: … verdaderamente terrible.
-Angelette: Es que no entiendo porque…
+Angelette: ... verdaderamente terrible.
+Angelette: Es que no entiendo porqué...
 Angelette: Me hacen escoger entre Olivia Rodrigo y Sabrina Carpenter!
 Angelette: Cuando todo es culpa de un tipo random!! Que ni siquiera es tan famoso!
-Angelette: La humanidad es tan cruel…
-Angelette: Porque tenemos que poner a dos chicas talentosas una contra la otra?!
+Angelette: La humanidad es tan cruel...
+Angelette: Porqué tenemos que poner a dos chicas talentosas una contra la otra?!
 Angelette: Me entiendes?
 
--> …. sí….. // [0]
+-> .... sí..... // [0]
     <<set $score = $score + 0>>
     <<SetSadAnimation AngelicAnimations>>
-    Angelette: jaja, que poco comvincente tu respuesta…
+    Angelette: jaja, que poco convincente tu respuesta...
     Angelette: tanto te estoy aburriendo?
     <<SetNeutralAnimation AngelicAnimations>>
-    Angelette: Tranqui, podemos hablar de otra cosa…
--> sí, sí… // [5]
+    Angelette: Tranqui, podemos hablar de otra cosa...
+-> sí, sí... // [5]
     <<set $score = $score + 5>>
-    Angelette: Yo sabia que ibas a estar de acuerdo!
+    Angelette: Yo sabía que ibas a estar de acuerdo!
     <<SetBlushOn AngelicAnimations true>>
     Angelette: Jijijiji.
     <<SetBlushOn AngelicAnimations false>>
 -> Sí! // [2]
     <<set $score = $score + 2>>
-    Angelette: Jaja, ya…
+    Angelette: Jaja, ya...
     Angelette: no tienes que mentirme tampoco.
 
-Angelette: Uff igual llevamos caleta de rato aca o no?
-Angelette: en… disculpa!
+Angelette: Uff igual llevamos caleta de rato acá o no?
+Angelette: en... disculpa!
 Angelette: La cuenta!!
 
-// **[Fade_IN]
-// Cambio de fondo de “Cafecito2_bg.png” a “Calle_bg.png”
-// [Fade_OUT]**
+<<FadeIn Fade 2>>
+<<wait 2>>
+<<Set GameBackground Calle_bg>>
+<<FadeOut Fade 2>>
+<<wait 2>>
 
 // ## Scene 02 / “La Calle”
 
 Angelette: La he estado pasando super,
 Angelette: Tinder es super loco,
-Angelette: Uno nunca sabe con que se encuentra…
+Angelette: Uno nunca sabe con que se encuentra...
 <<SetBlushOn AngelicAnimations true>>
-Angelette: Tu…
-Angelette: Habrías aceptado salir conmigo si yo fuera una cosa rara…
-Angelette: Saldrias conmigo si fuera un gusanito?
+Angelette: Tú...
+Angelette: Habrías aceptado salir conmigo si yo fuera una cosa rara...
+Angelette: Saldrías conmigo si fuera un gusanito?
 
 -> Sí. // [5]
     <<set $score = $score + 5>>
     Angelette: Jijiji
     Angelette: En verdad eres una persona decidida.
-    Angelette: No me pasa muy seguido…
+    Angelette: No me pasa muy seguido...
 -> Sí? // [0]
     <<set $score = $score + 0>>
     <<SetBlushOn AngelicAnimations false>>
-    // <<[Music_Stops]>>
-    Angelette: …
-    Angelette: …
-    // <<[Music_Plays]>>
+    <<PauseMusic Sound>>
+    Angelette: ...
+    Angelette: ...
+    <<ResumeMusic Sound>>
     Angelette: Te hice una pregunta rara o no?
-    Angelette: Jaja…
+    Angelette: Jaja...
 
 <<SetBlushOn AngelicAnimations false>>
-Angelette: Sabes que?
+Angelette: Sabes qué?
 Angelette: Estoy un poquito cansada.
 
 <<if $score <= 5>>
     // ## Final C [0~5]
-    Angelette se despidió de ti… y tu volviste a tu casa.
-    Al día siguiente, le mandaste un mensaje…
-    ”La pase bien el otro ayer, podríamos volver a salir pronto.”
-    Ella te dejo el visto
-    Y no te hablo mas.
+    <<FadeOutMusic Sound 3>>
+    <<FadeIn Fade 3>>
+    <<wait 3>>
+    <<HideAngelette AngelicAnimations>>
+    <<Set GameBackground Black>>
+    <<FadeOut Fade 1>>
+    <<wait 1>>
 
-    Fin.
+    Angelette se despidió de ti... y tú volviste a tu casa.
+    Al día siguiente, le mandaste un mensaje...
+    ”La pasé bien el otro día, podríamos volver a salir pronto.”
+    Ella te dejó el visto
+    Y no te habló más.
 <<else>>
-    Angelette: En verdad vivo super cerca de aquí…
-    Angelette: Nose…
+    Angelette: En verdad vivo super cerca de aquí...
+    Angelette: Nose...
     <<SetBlushOn AngelicAnimations true>>
-    Angelette: Si te gustaría podríamos seguir en mi depa….
+    Angelette: Si te gustaría podríamos seguir en mi depa...
 
-    // **[Fade_IN]
-    // Cambio de fondo de “Calle_bg.png” a “Depa_bg.png”
-    // [Fade_OUT]**
+    <<FadeIn Fade 2>>
+    <<wait 2>>
+    <<Set GameBackground Depa_bg>>
+    <<FadeOut Fade 2>>
+    <<wait 2>>
 
     <<SetBlushOn AngelicAnimations false>>
-    Es lindo el depa, tiene buen gusto para el decor…
+    Es lindo el depa, tiene buen gusto para el decor...
 
     <<SetNeutralAnimation AngelicAnimations>>
     Angelette: Bienvenido!
     Angelette: Te hago un cafecito?
-    Angelette: Yo…
-    Angelette: Te juro que no invito a todo el mundo a mi departamento así como así nomas…
+    Angelette: Yo...
+    Angelette: Te juro que no invito a todo el mundo a mi departamento así como así nomas...
     Angelette: Me crees o no?
 
-    -> Sí… // [5]
+    -> Sí... // [5]
         <<set $score = $score + 5>>
         <<SetBlushOn AngelicAnimations true>>
-        Angelette: Jiji…
-        Angelette: Yo sabia que me ibas a responder eso…
+        Angelette: Jiji...
+        Angelette: Yo sabía que me ibas a responder eso...
         <<SetBlushOn AngelicAnimations false>>
     -> Sí! // [2]
         <<set $score = $score + 2>>
-        // <<[Screen_Shake]>>
+        <<Shake ShakeEffect>>
         Angelette: !!
-        Angelette: Puedes ser medio intenso tu…
+        Angelette: Puedes ser medio intenso tú...
         <<SetBlushOn AngelicAnimations true>>
-        Angelette: No me desagrada…
+        Angelette: No me desagrada...
         <<SetBlushOn AngelicAnimations false>>
 
-    Angelette: Sabes que?
-    Angelette: Puedes quedarte un ratito mas…
+    Angelette: Sabes qué?
+    Angelette: Puedes quedarte un ratito más...
     Angelette: Si quieres.
 
     -> Sí.
         <<if $score <= 14>>
             // ## Final B [6~14]
+            <<FadeOutMusic Sound 3>>
+            <<FadeIn Fade 3>>
+            <<wait 3>>
+            <<HideAngelette AngelicAnimations>>
+            <<Set GameBackground Black>>
+            <<FadeOut Fade 1>>
+            <<wait 1>>
             Después de varias citas,
-            Tu y Angelette empezaron una relación,
+            Tú y Angelette empezaron una relación,
             Como todas, con altos y bajos
-            Después de un año y medio…
-            ella se gano una beca y se marcho a Noruega.
+            Después de un año y medio...
+            Ella se ganó una beca y se marchó a Noruega.
             Terminaron en buenos términos,
-            Pero no la viste mas…
+            Pero no la viste más...
         <<else>>
             // ## Final A [15~25]
-            Tu y Angelette empezaron una relación bonita y emocionante.
-            Ella hizo un post-doctorado en finanazas y consiguió el ascenso de sus sueños,
-            Se mudaron juntos y vivieron felices por 5 años…
-            En su aniversario numero 6, Angelette te pidió que te casaras con ella,
-            Tu dijiste “Si”.
+            <<FadeOutMusic Sound 3>>
+            <<FadeIn Fade 3>>
+            <<wait 3>>
+            <<HideAngelette AngelicAnimations>>
+            <<Set GameBackground Black>>
+            <<FadeOut Fade 1>>
+            <<wait 1>>
+            Tú y Angelette empezaron una relación bonita y emocionante.
+            Ella hizo un post-doctorado en finanzas y consiguió el ascenso de sus sueños,
+            Se mudaron juntos y vivieron felices por 5 años...
+            En su aniversario número 6, Angelette te pidió que te casaras con ella,
+            Tú dijiste “Sí”.
         <<endif>>
 <<endif>>
+
+
+<<FadeIn Fade 3>>
+<<wait 3>>
+<<GameOver GameManager>>
 ===

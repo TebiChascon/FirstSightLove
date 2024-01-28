@@ -28,6 +28,12 @@ public class SoundManager : MonoBehaviour
         musicSource.Pause();
     }
 
+    [YarnCommand("ResumeMusic")]
+    public void ResumeMusic()
+    {
+        musicSource.UnPause();
+    }
+
     [YarnCommand("StopMusic")]
     public void StopMusic()
     {
