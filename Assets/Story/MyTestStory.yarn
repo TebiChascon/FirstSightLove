@@ -1,0 +1,37 @@
+﻿title: Start
+---
+
+<<SetVolume Sound 0>>
+<<PlayMusic Sound MusicTest01>>
+<<FadeInMusic Sound 3>>
+<<Set GameBackground test01>>
+<<FadeOut Fade 3>>
+<<wait 3>>
+
+Narrator: Oh, hello!
+    -> Hi, where am I?
+        Narrator: You're in Unity!
+            -> How did I get here?
+                <<PlaySFX Sound SFXTest01>>
+                <<jump Unity>>
+            -> Oh yes.
+                <<PlaySFX Sound SFXTest02>>
+                <<jump Oh>>
+
+===
+
+title: Oh
+---
+<<StopMusic Sound>>
+<<Set GameBackground test02>>
+Narrator: Yeah, fun, right?
+<<FadeIn Fade 3>>
+===
+
+title: Unity
+---
+<<PlayMusic Sound MusicTest02>>
+<<Set GameBackground test03>>
+Narrator: Someone read the Beginner's Guide!
+<<FadeIn Fade 3>>
+===
